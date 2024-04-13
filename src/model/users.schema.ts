@@ -2,6 +2,11 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
 import { Role } from 'src/decorators/roles.decorator';
 
+export type UserReq = {
+  userId: string;
+  username: string;
+};
+
 export type UserDocument = HydratedDocument<User>;
 
 @Schema({
@@ -16,6 +21,9 @@ export class User {
 
   @Prop({ type: String, default: Role.User, enum: Role })
   role: string;
+
+  @Prop({ type: String, default: '' })
+  name: string;
 
   @Prop({
     type: String,

@@ -10,6 +10,12 @@ export class UserEntity {
   @Expose()
   createdAt: string;
 
+  @Expose()
+  role: string;
+
+  @Expose()
+  name: string;
+
   @Exclude()
   password: string;
 

@@ -26,4 +26,8 @@ export class AppService {
   async get() {
     return this.userModel.find({ active: true }).lean();
   }
+
+  // async updateOneById(userId: UserDocument['_id']) {
+  //   const user  = await this.findById(userId)
+  // }
 }
